@@ -1,0 +1,181 @@
+version: "2.0"
+
+stories:
+
+- story: hello
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: stop from
+  steps:
+    - intent: ask_order
+    - action: customer_order_form
+    - active_loop: customer_order_form
+    - intent: unconfirm
+    - action: action_deactivate_loop
+    - active_loop: null
+    - action: action_reset_slot
+    - action: utter_order_cancellation
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_user_manual
+    entities:
+    - product_name: Men vi khuẩn sống Việt Nhật
+    - age: 17 tháng tuổi
+  - slot_was_set:
+    - age: 17 tháng tuổi
+  - slot_was_set:
+    - product_name: Men vi khuẩn sống Việt Nhật
+  - action: action_set_slot_user_manual
+  - slot_was_set:
+    - request_counselling: 16
+  - action: action_answer
+  - slot_was_set:
+    - request_counselling: null
+  - intent: ask_recognizing_signs
+    entities:
+    - product_name: Men vi khuẩn sống Việt Nhật
+  - slot_was_set:
+    - product_name: Men vi khuẩn sống Việt Nhật
+  - action: action_set_slot_recognizing_signs
+  - slot_was_set:
+    - request_counselling: 8
+  - action: action_answer
+  - slot_was_set:
+    - request_counselling: null
+  - intent: thanks
+  - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_user_manual
+    entities:
+    - product_name: Men vi khuẩn sống Việt Nhật
+    - age: 17 tháng tuổi
+  - slot_was_set:
+    - age: 17 tháng tuổi
+  - slot_was_set:
+    - product_name: Men vi khuẩn sống Việt Nhật
+  - slot_was_set:
+    - age: 17 tháng tuổi
+  - slot_was_set:
+    - product_name: Men vi khuẩn sống Việt Nhật
+  - action: action_set_slot_user_manual
+  - slot_was_set:
+    - request_counselling: 16
+  - action: action_answer
+  - slot_was_set:
+    - request_counselling: null
+  - intent: ask_price
+  - action: action_set_slot_price
+  - slot_was_set:
+    - request_counselling: 14
+  - action: action_answer
+  - slot_was_set:
+    - request_counselling: null
+  - intent: ask_for_product_quantity
+  - action: action_set_slot_product_quantity
+  - slot_was_set:
+    - request_counselling: 12
+  - action: action_answer
+  - slot_was_set:
+    - request_counselling: null
+  - intent: ask_order
+    entities:
+    - number_of_products: 1 hộp
+  - slot_was_set:
+    - number_of_products: 1 hộp
+  - action: customer_order_form
+  - active_loop: customer_order_form
+  - slot_was_set:
+    - product_name: Men vi khuẩn sống Việt Nhật
+  - slot_was_set:
+    - number_of_products: '1'
+  - slot_was_set:
+    - requested_slot: customer_phone_number
+  - slot_was_set:
+    - customer_phone_number: '0987191146'
+  - slot_was_set:
+    - customer_phone_number: '0987191146'
+  - slot_was_set:
+    - requested_slot: customer_name
+  - slot_was_set:
+    - customer_name: An
+  - slot_was_set:
+    - customer_name: An
+  - slot_was_set:
+    - requested_slot: province_name
+  - slot_was_set:
+    - province_name: Hà Nội
+  - slot_was_set:
+    - province_name: Hà Nội
+  - slot_was_set:
+    - requested_slot: district_name
+  - slot_was_set:
+    - district_name: Đống Đa
+  - slot_was_set:
+    - district_name: Đống Đa
+  - slot_was_set:
+    - requested_slot: ward_name
+  - slot_was_set:
+    - ward_name: Láng Thượng
+  - slot_was_set:
+    - ward_name: Láng Thượng
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - slot_was_set:
+    - total: '150000.0'
+  - intent: confirm
+  - action: action_confirm_order
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_price
+    entities:
+    - product_name: Bánh dinh duỡng Hebi
+  - slot_was_set:
+    - product_name: Bánh dinh duỡng Hebi
+  - action: action_set_slot_price
+  - slot_was_set:
+    - request_counselling: 14
+  - action: action_answer
+  - slot_was_set:
+    - request_counselling: null
+  - intent: ask_ship
+  - action: action_set_slot_ship
+  - slot_was_set:
+    - request_counselling: 10
+  - action: action_answer
+  - slot_was_set:
+    - request_counselling: null
+
+- story: interactive_story_4
+  steps:
+  - intent: ask_made_in
+    entities:
+    - product_name: Bánh dinh duỡng Hebi
+  - slot_was_set:
+    - product_name: Bánh dinh duỡng Hebi
+  - action: action_set_slot_made_in
+  - slot_was_set:
+    - request_counselling: 7
+  - action: action_answer
+  - slot_was_set:
+    - request_counselling: null
+  - intent: ask_price
+  - action: action_set_slot_price
+  - slot_was_set:
+    - request_counselling: 14
+  - action: action_answer
+  - slot_was_set:
+    - request_counselling: null

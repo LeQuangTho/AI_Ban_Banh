@@ -1,0 +1,31 @@
+digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class="", fontsize=12, label=utter_greet];
+2 [class="", fontsize=12, label=customer_order_form];
+"-4" [class=ellipsis, label="..."];
+"-6" [class=ellipsis, label="..."];
+5 [class=active, fontsize=12, label=action_set_slot_made_in];
+6 [class=active, fontsize=12, label=action_answer];
+7 [class=active, fontsize=12, label=action_set_slot_price];
+8 [class=active, fontsize=12, label=action_answer];
+9 [class="intent dashed active", label="  ?  ", shape=rect];
+10 [class=intent, fillcolor=lightblue, label=None, shape=rect, style=filled];
+11 [class=intent, fillcolor=lightblue, label=None, shape=rect, style=filled];
+12 [class="intent active", fillcolor=lightblue, label="bánh Hebi là bánh của Viện dinh dưỡng ạ", shape=rect, style=filled];
+13 [class="intent active", fillcolor=lightblue, label="giá bán như nào ạ", shape=rect, style=filled];
+0 -> "-1"  [class="", key=NONE, label=""];
+0 -> 10  [class="", key=0];
+0 -> 11  [class="", key=0];
+0 -> 12  [class=active, key=0];
+1 -> "-6"  [class="", key=NONE, label=""];
+2 -> "-4"  [class="", key=NONE, label=""];
+5 -> 6  [class=active, key=NONE, label=""];
+6 -> 13  [class=active, key=0];
+7 -> 8  [class=active, key=NONE, label=""];
+8 -> 9  [class=active, key=NONE, label=""];
+10 -> 1  [class="", key=0];
+11 -> 2  [class="", key=0];
+12 -> 5  [class=active, key=0];
+13 -> 7  [class=active, key=0];
+}

@@ -1,0 +1,42 @@
+version: "2.0"
+nlu:
+  - synonym: Bánh dinh duỡng Hebi
+    examples: |
+      - Bánh dinh duỡng Hebi
+      - Bánh Hebi
+      - Bánh dinh duỡng
+      - dinh dưỡng
+      - Bánh cao năng lượng hebi
+      - Cao năng lượng hebi
+
+  - synonym: Men vi khuẩn sống Việt Nhật
+    examples: |
+      - Men vi khuẩn sống
+      - Men Việt Nhật
+      - Men tiêu hóa
+      - Men vks
+      - men VN
+      - Men vsk VN
+      - men sống
+
+  - regex: number_of_products
+    examples: |
+      - ([^0-9]\d{1,3}[^0-9]|^\d{1,3}[^0-9]|[^0-9]\d{1,3}$)
+
+  - regex: age
+    examples: |
+      - \d{1,2}[ ]*(tuổi|tháng tuổi|tháng)
+
+  - regex: customer_phone_number
+    examples: |
+      - (\d{10,12})
+
+  - lookup: product_name
+    examples: |
+      - Bánh dinh duỡng Hebi
+      - Bánh Hebi
+      - Bánh dinh duỡng
+      - Bánh cao năng lượng hebi
+      - Men vi khuẩn sống Việt Nhật
+      - Men vi khuẩn sống
+      - Men Việt Nhật

@@ -1,0 +1,4 @@
+Cải tiến bot thường xuyên (CDD)
+đánh giá (vote sao) sau mỗi cuộc trò chuyện kết thúc
+xử lí các câu mà bot không hiểu:
+	- đưa ra các câu hỏi mẫu mà khách hàng có thể hỏi

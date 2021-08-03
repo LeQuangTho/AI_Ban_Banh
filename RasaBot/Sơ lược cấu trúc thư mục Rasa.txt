@@ -1,0 +1,16 @@
+Sau đây là phần Demo sản phẩm thực tế của chúng em
+Đầu tiên là Cấu trúc thư mục của Rasa fw version 2.0
+Các file quan trọng khi thực hiện train Bot
+Đầu tiên chúng ta cần chú ý đến folder Data bao gồm các file NLU, story, rule
+NLU: ở đây bao gồm các câu nói ví dụ của người dùng được phân loại theo từng ý định (intent)
+
+Stories and rules: Đây là nơi 'Viết' các kịch bản của cuộc trò chuyện giữa người dùng và bot. Khi bot hoạt động nó sẽ tuân thủ đúng kịch bản có trong file rule nếu đầu vào của người dùng trùng với intent của kịch bản đó. đối với các kịch bản của file stories các kịch bản sẽ được bot lựa chọn linh hoạt nếu đầu vào của người dùng đi sai kịch bản
+
+Sau mỗi tin nhắn của người dùng, mô hình sẽ dự đoán một hành động mà bot sẽ thực hiện tiếp theo. Các hành động khác nhau mà chúng ta có thể sử dụng sẽ được xử lý tại file actions.py
+
+Khi các ý định người dùng, kịch bản , hành động của bot đã được xác định chúng ta cần 1 nơi để xác định miền hoạt động cho bot. Chúng ta sẽ làm điều đó ở file Domain 
+Domain: Miền xác định mà bot của chúng hoạt động. Nó chỉ intent, entity, slot, utter, form và actions mà bot cần biết. Cũng tại đây chúng ta có thể xác định cấu hình cho các phiên hội thoại.
+
+Config: File cấu hình các components và policies mà mô hình sẽ sử dụng để đưa ra dự đoán dựa trên dữ liệu đầu vào của người dùng.
+
+
